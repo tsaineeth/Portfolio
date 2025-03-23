@@ -1,0 +1,57 @@
+{
+  "technical_skills": {
+    "Programming Languages": [
+      "Python",
+      "Java",
+      "C++",
+      "C"
+    ],
+    "Web Technologies": [
+      "Flask",
+      "Django",
+      "HTML",
+      "CSS",
+      "JS"
+    ],
+    "Database": [
+      "Oracle",
+      "MySql"
+    ],
+    "Data  Modeling": [
+      "XML",
+      "JSON"
+    ],
+    "Operating System": [
+      "Linux",
+      "Windows",
+      "Mac"
+    ],
+    "Familiar With": [
+      "GIT",
+      "GitHub",
+      "BitBucket",
+      "CI/ CD",
+      "Jenkins",
+      "Jira",
+      "Agile",
+      "Scrum",
+      "Docker",
+      "Temporal"
+    ]
+  },
+  "soft_skills": [
+    "CS fundamentals",
+    "Leadership",
+    "Initiative",
+    "•Creativity",
+    "Analytical and Problem Solving Skills"
+  ],
+  "certifications": [
+    {
+      "description": "Az-900",
+      "year": 2023,
+      "name": "Azure Fundamentals"
+
+    }
+  ]
+}
