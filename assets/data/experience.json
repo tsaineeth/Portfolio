@@ -1,0 +1,110 @@
+{
+  "experience": [
+    {
+      "company": "Aera Technology",
+      "role": "Senior Software Engineer 2",
+      "location": "Remote, India",
+      "start_date": "June 2023",
+      "end_date": "Present",
+      "description": "Built scalable APIs using Flask and FastAPI. Worked on cloud deployment strategies and database optimization for high-load applications.",
+      "projects": [
+        {
+          "name": "Deployment Manager",
+          "description": "",
+          "summary": [
+            "Working as a senior software engineer"
+          ]
+        }
+      ],
+      "technologies": [
+        "Python",
+        "React",
+        "Flask",
+        "FastAPI",
+        "Mysql",
+        "Git",
+        "Docker",
+        "Temporal"
+      ]
+    },
+    {
+      "company": "Amadeus Labs",
+      "role": "Software Development Engineer 2",
+      "location": "Bangalore, India",
+      "start_date": "May 2021",
+      "end_date": "June 2023",
+      "description": "Designing, implementing and maintaining scalable backend applications.",
+      "projects": [
+        {
+          "name": "Connectivity Adaptation Layer",
+          "summary": [
+            "Developed backend application components by adding new\nfeatures as per requirements.",
+            "Designing and providing scalable solutions to\naccommodate new features.",
+            "Working as an acting Scrum Master by handling scrum\nactivities in the absence of Scrum Master.",
+            "Trained and supervised 3+ employees (freshers and\nexperienced), providing training support/ guidance."
+          ]
+        }
+      ],
+      "technologies": [
+        "Python",
+        "C++",
+        "MySQL",
+        "Azure",
+        "Docker",
+        "BitBucket"
+      ]
+    },
+    {
+      "company": "Capgemini",
+      "role": "Associate Consultant",
+      "location": "Bangalore, In",
+      "start_date": "July 2017",
+      "end_date": "May 2021",
+      "description": "Worked as a Python and Java developer. Enhanced multiple java applications and created automated scripts for use with in the project.",
+      "projects": [
+        {
+          "name": "Python Automation | Warner Bros.",
+          "summary": [
+            "Automated daily meeting reports generation. Used python\nmodules such as selenium, openpyxl.",
+            "Automated recon validation for data gathered from 3\ndifferent databases and finding discrepancy."
+          ]
+        }
+      ],
+      "technologies": [
+        "Python",
+        "Openpyxl",
+        "Java",
+        "HTML",
+        "CSS",
+        "JS",
+        "Selenium"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "company": "Aera Technology",
+      "year": 2024,
+      "name": "Aera Star"
+
+    },
+    {
+      "company": "Amadeus Labs",
+      "year": 2022,
+      "name": "High Flyer Award"
+
+    },
+    {
+      "company": "HackerRank",
+      "year": 2021,
+      "name": "Python (Basics)"
+
+    },
+    {
+      "company": "Capgemini",
+      "year": 2019,
+      "name": "Rising Star Award"
+    }
+
+  ]
+}

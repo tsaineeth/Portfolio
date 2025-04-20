@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Your Portfolio</title>
+    <title>Saineeth's Portfolio</title>
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -12,8 +12,8 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow ">
         <div class="container-fluid">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                <li class="nav-item"><h1 class="navbar-brand text-body-secondary" id="first_name"></h1></li>
-                <li class="nav-item"><h1 class="navbar-brand bold" id="last_name"></h1></li>
+                <li class="nav-item"><h1 class="navbar-brand text-body-secondary" id="firstName"></h1></li>
+                <li class="nav-item"><h1 class="navbar-brand bold" id="lastName"></h1></li>
                 <!-- <li class="nav-item"><a href="#" id="contact-linkedin" target="_blank">LinkedIn</a></li> -->
                 <!-- <li class="nav-item"><a href="#" id="contact-github" target="_blank">GitHub</a></li> -->
             </ul>
@@ -30,17 +30,49 @@
     <div class="container mx-auto mt-4">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">About Me</h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary" id="about-title"></h6>
-                <p class="card-text" id="about-bio"></p>
+                <h5 class="card-title text-secondary fs-3 fw-light">About Me</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary" id="aboutTitle"></h6>
+                <p class="card-text" id="aboutBio"></p>
             </div>
         </div>
     </div>
 
     <div class="container mx-auto mt-4">
         <div class="row align-items-start">
-            <div class="col" id="main_col_left"></div>
-            <div class="col" id="main_col_right"></div>
+            <div class="col" id="main_col_left">
+                <div class="card mx-auto mt-2" >
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary fs-3 fw-light">SKILLS</h5>
+                        <div class="section" id="technicalSkills"></div>
+                        <div class="section" id="softSkills"></div>
+                        <div class="section" id="certifications"></div>
+                    </div>
+                </div>
+                <div class="card mx-auto mt-2" >
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary fs-3 fw-light">EDUCATION</h5>
+                        <div class="section" id="education"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col" id="main_col_right">
+                <div class="card mx-auto mt-2" >
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary fs-3 fw-light">EXPERIENCE</h5>
+                        <div class="section" id="experience"></div>
+                    </div>
+                </div>
+
+                <div class="card mx-auto mt-2" >
+                    <div class="card-body">
+                        <h5 class="card-title text-secondary fs-3 fw-light">AWARDS</h5>
+                        <div class="section" id="awards"></div>
+                    </div>
+                </div>
+
+
+            </div>
 
         </div>
     </div>
