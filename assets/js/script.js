@@ -6,6 +6,20 @@ document.getElementById('themeSwitcher').addEventListener('click', () => {
     }
 })
 
+document.getElementById('downloadBtn').addEventListener('click', () => {
+    downloadPDF().then(r => {
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+    });
+})
+
 function createCard() {
     const card = document.createElement("div");
     card.classList.add("card")
@@ -77,9 +91,9 @@ function getCertifications(certifications) {
         const div = document.createElement("div");
         div.classList.add("row")
 
-        div.innerHTML += `<p class="card-text text-body-secondary col-2">${certificate.year}</p>`
-        div.innerHTML += `<p class="card-text text-body-secondary col-4">${certificate.name}</p>`
-        div.innerHTML += `<p class="card-text text-body-secondary col-2">${certificate.description}</p>`
+        div.innerHTML += `<p class="card-text text-body-secondary col-auto">${certificate.year}</p>`
+        div.innerHTML += `<p class="card-text text-body-secondary col-6">${certificate.name}</p>`
+        div.innerHTML += `<p class="card-text text-body-secondary col-auto">${certificate.description}</p>`
 
         cardBody.appendChild(div)
     })
@@ -104,7 +118,7 @@ function getTechnicalSkills(technicalSkills) {
 
 }
 
-function getSoftSkills(softSkills){
+function getSoftSkills(softSkills) {
     const card = createCard();
     const cardBody = document.createElement("div");
     cardBody.classList.add("card-body")
@@ -151,7 +165,6 @@ function getExperience(experience, sectionExperience) {
             const ul = document.createElement("ul");
             ul.classList.add("text-body-secondary");
             const summary = project?.summary
-            console.log(summary)
             summary.forEach(line => {
                 const li = document.createElement("li");
                 li.textContent = line;
@@ -159,7 +172,6 @@ function getExperience(experience, sectionExperience) {
             });
             cardBody.appendChild(ul)
         })
-
 
 
         card.appendChild(cardBody)
@@ -178,10 +190,9 @@ function getAwards(awards) {
     awards.forEach(award => {
         const div = document.createElement("div");
         div.classList.add("row")
-
-        div.innerHTML += `<p class="card-text text-body-secondary col-2">${award.year}</p>`
-        div.innerHTML += `<p class="card-text text-body-secondary col-4">${award.name}</p>`
-        div.innerHTML += `<p class="card-text text-body-secondary col-4">${award.company}</p>`
+        div.innerHTML += `<p class="card-text text-body-secondary col-auto">${award.year}</p>`
+        div.innerHTML += `<p class="card-text text-body-secondary col-5">${award.name}</p>`
+        div.innerHTML += `<p class="card-text text-body-secondary col">${award.company}</p>`
 
         cardBody.appendChild(div)
     })
@@ -198,4 +209,58 @@ function fillExperience(experience) {
 
     getExperience(experience["experience"], sectionExperience);
     sectionAwards.appendChild(getAwards(experience["awards"]));
+}
+
+async function downloadPDF() {
+
+    const year = new Date().getFullYear();
+    const downloadFileName = "Saineeth's Resume_" + year.toString() + ".pdf";
+
+    const cloneAndClean = (selector) => {
+        const el = document.getElementById(selector);
+        if (!el) return null;
+        const clone = el.cloneNode(true);
+        clone.querySelectorAll('.no-export').forEach(el => el.remove());
+        return clone;
+    };
+
+    const {jsPDF} = window.jspdf;
+
+    // Create export container
+    const exportContainer = document.createElement("div");
+    exportContainer.style.padding = "1%";
+
+    // Clone only the elements we want
+    const headerClone = cloneAndClean("header");
+    const mainClone = cloneAndClean("main");
+    const footerClone = cloneAndClean("footer");
+
+    if (headerClone) exportContainer.appendChild(headerClone);
+    if (mainClone) exportContainer.appendChild(mainClone);
+    if (footerClone) exportContainer.appendChild(footerClone);
+
+    document.body.appendChild(exportContainer);
+
+    // Wait for style render
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+    const canvas = await html2canvas(exportContainer, {
+        // scale: 2,
+        useCORS: true, // backgroundColor: "#ffffff",
+    });
+
+    exportContainer.remove();
+
+    const imgData = canvas.toDataURL("image/jpeg", 1);
+    const pdf = new jsPDF("p", "mm", "a4");
+
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    // const pdfHeight = pdf.internal.pageSize.getHeight();
+
+    const imgProps = pdf.getImageProperties(imgData);
+    const imgWidth = pdfWidth;
+    const imgHeight = (imgProps.height * imgWidth) / imgProps.width;
+
+    pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight );
+    pdf.save(downloadFileName);
 }

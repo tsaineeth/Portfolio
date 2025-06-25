@@ -10,9 +10,11 @@
       "projects": [
         {
           "name": "Deployment Manager",
-          "description": "",
           "summary": [
-            "Working as a senior software engineer"
+            "Designed and implemented clean, scalable and modular backend architectures using Flask.",
+            "Developed and maintained RESTful APIs powering high-traffic applications, ensuring maintainability and reusability.",
+            "Led end-to-end feature development from planning to production.",
+            "Ensured code quality through unit/integration tests and code reviews."
           ]
         }
       ],
@@ -91,7 +93,7 @@
     {
       "company": "Amadeus Labs",
       "year": 2022,
-      "name": "High Flyer Award"
+      "name": "High Flyer"
 
     },
     {
@@ -103,7 +105,7 @@
     {
       "company": "Capgemini",
       "year": 2019,
-      "name": "Rising Star Award"
+      "name": "Rising Star"
     }
 
   ]

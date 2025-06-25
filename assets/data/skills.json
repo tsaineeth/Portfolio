@@ -27,6 +27,10 @@
       "Windows",
       "Mac"
     ],
+    "AI": [
+      "Chat-GPT",
+      "Claude"
+    ],
     "Familiar With": [
       "GIT",
       "GitHub",
@@ -49,10 +53,9 @@
   ],
   "certifications": [
     {
-      "description": "Az-900",
+      "description": "AZ-900",
       "year": 2023,
       "name": "Azure Fundamentals"
-
     }
   ]
 }
